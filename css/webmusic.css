@@ -1,0 +1,753 @@
+body,
+p,
+a,
+img {
+    margin: 0;
+    padding: 0;
+}
+
+#bg {
+    width: 100%;
+    height: 100%;
+    filter: blur(90px);
+    z-index: -10;
+    opacity: .6;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.panelContent {
+    position: relative;
+    width: 100%;
+    height: 800px;
+    background: #000;
+    background-size: cover;
+    background-position: 100% 100%;
+    background-position: top center \9;
+    background-repeat: no-repeat;
+}
+
+.panelContent .content {
+    z-index: 100;
+    position: absolute;
+    left: 50%;
+    width: 840px;
+    margin: 100px 0 0 -390px;
+    min-height: 300px;
+    /* background: #f2f2f2; */
+}
+
+.posterContent {
+    width: 260px;
+}
+
+.fl {
+    float: left;
+}
+
+.poster {
+    width: 260px;
+    height: 260px;
+    margin-bottom: 25px;
+    /*background: url("http://img.hb.aicdn.com/f40a62cfb124016981ee01de73e8ed60ded6323c90a5-uqI3pU_sq320") no-repeat;*/
+    background-size: cover;
+    box-shadow: 0px 0px 14px #2b2b2b;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.posterNull {
+    height: inherit;
+    width: inherit;
+    background: url('../images/nullMusic.png') no-repeat;
+    position: fixed;
+    z-index: -1;
+    overflow: hidden;
+    opacity: 0.9;
+    background-position: top left;
+}
+
+.posterImg {
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+.lrcContent {
+    font-size: 13px;
+    width: 460px;
+    min-height: 500px;
+    /* margin-top: -7px; */
+    margin-left: 116px;
+    /* background: #e6e6e6; */
+}
+
+.lrcContent .lrcName {
+    line-height: 40px;
+    font-size: 24px;
+    font-style: normal;
+    color: #fff;
+    width: 460px;
+}
+
+.lrcContent .lrcDetail {
+    display: flex;
+    line-height: 20px;
+    margin-top: 0.5rem;
+}
+
+.albumName,
+.singerName {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #fff;
+    padding-right: 10px;
+}
+
+.albumName .fontColor,
+.singerName .fontColor {
+    opacity: .6;
+    color: #ffffff;
+}
+
+.albumName .blank,
+.singerName .blank {
+    float: none;
+    color: #fff;
+    padding-right: 5px;
+    font-size: 15px;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+}
+
+.lrcContent .lrc {
+    width: 460px;
+    height: 400px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin-top: 20px;
+}
+
+.lrc .eachLrc {
+    width: 420px;
+    height: 34px;
+    font-size: 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    opacity: .6;
+    color: #ffffff;
+}
+
+.selfTurn {
+    color: #01e5ff !important;
+    font-size: 18px !important;
+    opacity: 1 !important;
+}
+
+.control {
+    height: 55px;
+    background: #fafafa;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.musicControl {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    bottom: 0;
+    z-index: 1000;
+    transition: all 500ms;
+}
+
+.controlBg {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: #a5a5a5;
+    opacity: .3;
+    filter: alpha(opacity=30);
+    box-shadow: 0 -10px 20px #403f3f
+}
+
+
+/**
+ *左侧
+ */
+
+.playerControl {
+    position: relative;
+    width: 960px;
+    height: 80px;
+    margin: 0 auto;
+}
+
+.playerControl .controlLeft {
+    float: left;
+    width: 160px;
+    height: 80px;
+    /* background: pink; */
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+
+/*.controlLeft .icon,*/
+
+
+/*.controlRight .icon,*/
+
+
+/*.controlList*/
+
+.icon {
+    display: block;
+    cursor: pointer;
+    background: url(../images/btn.png);
+    background-repeat: no-repeat;
+}
+
+.controlLeft .playLast {
+    background-position: 0 -143px;
+    height: 36px;
+    width: 36px;
+}
+
+.controlLeft .playLast:hover {
+    background-position: -36px -143px;
+}
+
+.controlLeft .playOrPauseContent {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.controlLeft .pause {
+    background-position: -5px -65px;
+    height: 50px;
+    width: 50px;
+}
+
+.controlLeft .pause:hover {
+    background-position: -62px -62px;
+    height: 56px;
+    width: 56px;
+}
+
+.controlLeft .play {
+    background-position: -5px -5px;
+    height: 50px;
+    width: 50px;
+}
+
+.controlLeft .play:hover {
+    background-position: -62px -2px;
+    height: 56px;
+    width: 56px;
+}
+
+.controlLeft .playNext {
+    background-position: -144px -143px;
+    height: 36px;
+    width: 36px;
+}
+
+.controlLeft .playNext:hover {
+    background-position: -180px -143px;
+}
+
+.controlPoster {
+    width: 60px;
+    height: 100%;
+    float: left;
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.controlPoster .controlPosterImg {
+    width: 60px;
+    height: 60px;
+    background: url("../images/nullMusic.png") no-repeat;
+    background-size: cover;
+}
+
+.controlCenter {
+    width: 370px;
+    height: 60px;
+    margin-top: 10px;
+    margin-left: 15px;
+    float: left;
+}
+
+.controlCenter .songMsg {
+    width: 100%;
+    height: 30px;
+    display: inline-flex;
+    justify-content: space-between;
+    color: #a5a5a5;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.songMsg .songMsgLeft {
+    color: #ffffff;
+    font-size: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.controlCenterBottom {
+    margin-top: 10px;
+    position: relative;
+}
+
+.progressBg {
+    background: #FFFFFF;
+    opacity: 0.3;
+    height: 3px;
+}
+
+.progressBar {
+    height: 3px;
+    background: #11a4f0;
+    position: absolute;
+    top: 0;
+}
+
+.Ball {
+    width: 100%;
+    height: 10px;
+    position: absolute;
+    top: -4px;
+}
+
+.Ball:hover {
+    cursor: pointer;
+}
+
+.progressBall {
+    background-position: -217px -181px;
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    left: 0;
+}
+
+.controlRight {
+    width: 190px;
+    height: 80px;
+    float: left;
+    margin-left: 30px;
+    display: inline-flex;
+    /*align-items: center;*/
+    justify-content: space-around;
+    position: relative;
+}
+
+.controlRight .each-control {
+    height: 45px;
+    width: 17px;
+    position: relative;
+}
+
+.controlRight .each-controlIcon {
+    position: absolute;
+    bottom: 0;
+}
+
+.controlRight .volume {
+    background-position: -64px -195px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .volume:hover {
+    background-position: -80px -195px;
+}
+
+.controlRight .noVolume {
+    background-position: -127px -195px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .noVolume:hover {
+    background-position: -144px -195px;
+}
+
+.volumeControl {
+    background: url(../images/volume-panel.png) no-repeat;
+    z-index: 11;
+    width: 29px;
+    height: 114px;
+    position: absolute;
+    left: -6px;
+    bottom: 100%;
+    display: none;
+}
+
+.volume-barHome {
+    position: absolute;
+    left: 13px;
+    top: 10px;
+    width: 6px;
+    height: 90px;
+    /*background: red;*/
+    overflow: hidden;
+}
+
+.volume-barHome:hover {
+    cursor: pointer;
+}
+
+.volume-barHome .volume-bar {
+    position: absolute;
+    /*left: 1px;*/
+    background: #11a4f0;
+    width: 4px;
+    height: 90px;
+    top: 0;
+}
+
+.volume-ball {
+    background-position: -242px -130px;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 10px;
+    top: 5px;
+}
+
+.controlRight .palyModeLoop {
+    background-position: -64px -179px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .palyModeLoop:hover {
+    background-position: -80px -179px;
+}
+
+.controlRight .palyModeSingle {
+    background-position: -0px -179px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .palyModeSingle:hover {
+    background-position: -16px -179px;
+}
+
+.controlRight .palyModeRandom {
+    background-position: -128px -179px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .palyModeRandom:hover {
+    background-position: -144px -179px;
+}
+
+.controlRight .downloadThis {
+    background-position: -240px -32px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .downloadThis:hover {
+    background-position: -255.6px -32px;
+}
+
+.controlRight .share {
+    background-position: -240px -0px;
+    height: 16px;
+    width: 16px;
+}
+
+.controlRight .share:hover {
+    background-position: -256.5px -0px;
+}
+
+.controlRight .playStyleList {
+    width: 100px;
+    padding: 10px;
+    height: 95px;
+    position: absolute;
+    bottom: 85px;
+    color: #FFFFFF;
+    background: url("../images/play_style.png");
+    left: 10px;
+    display: none;
+    z-index: 10;
+}
+
+.changeDisplay {
+    display: block !important;
+}
+
+.playStyleList .li {
+    height: 30px;
+    line-height: 30px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #30343d;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 0 10px;
+}
+
+.playStyleList .li span:first-child {
+    margin-right: 10px;
+}
+
+.playStyleList .li:last-child {
+    border-bottom: none;
+}
+
+.li .iconOne {
+    background-position: -64px -179px;
+    height: 16px;
+    width: 16px;
+}
+
+.li .newIconOne {
+    background-position: -80px -179px;
+    color: #19b5f0;
+}
+
+.li .iconTwo {
+    background-position: -0px -179px;
+    height: 16px;
+    width: 16px;
+}
+
+.li .newIconTwo {
+    background-position: -16px -179px;
+    color: #19b5f0;
+}
+
+.li .iconThree {
+    background-position: -128px -179px;
+    height: 16px;
+    width: 16px;
+}
+
+.li .newIconThree {
+    background-position: -144px -179px;
+    color: #19b5f0;
+}
+
+.controlList {
+    float: left;
+    color: #ffffff;
+    font-size: 13px;
+    margin-top: 28px;
+    margin-left: 16px;
+}
+
+.controlList .listIcon {
+    background-position: 0px -120px;
+    height: 23px;
+    width: 60px;
+    margin-right: 6px;
+}
+
+.controlList .newListIcon {
+    background-position: -61px -120px;
+    color: #19b5f0;
+}
+
+.controlList .listNum {
+    margin-left: 32px;
+    height: 23px;
+    line-height: 23px;
+}
+
+.controlList .playList {
+    width: 480px;
+    height: 410px;
+    right: 20px;
+    color: #7c898e;
+    position: absolute;
+    bottom: 80px;
+    background: #2f343b;
+    z-index: 9;
+    display: none;
+}
+
+.showPlayList {
+    display: block !important;
+}
+
+.controlList .playListHeader {
+    position: relative;
+    width: 442px;
+    height: 50px;
+    line-height: 50px;
+    padding: 0 19px;
+    font-size: 16px;
+    overflow: hidden;
+    color: #86898e;
+    background-color: #2a2e35;
+    display: inline-flex;
+    justify-content: space-between;
+}
+
+.playListHeader .header-control {
+    display: inline-flex;
+}
+
+.icon-trash {
+    background-position: -240px -64px;
+    height: 16px;
+    width: 16px;
+    margin: 17px 10px;
+}
+
+.icon-trash:hover {
+    background-position: -256px -64px;
+}
+
+.header-control .line {
+    height: 16px;
+    width: 1px;
+    background: #aaabae;
+    margin: 17px 10px;
+}
+
+.icon-close {
+    background-position: -240px -95px;
+    height: 16px;
+    width: 16px;
+    margin: 17px 0 17px 10px;
+}
+
+.icon-close:hover {
+    background-position: -256px -95px;
+}
+
+.controlList .playContent {
+    height: 360px;
+    width: 460px;
+    padding: 0 10px;
+    overflow-y: scroll;
+}
+
+.playContent .eachSong {
+    height: 39px;
+    line-height: 39px;
+    width: 100%;
+    /*background-color: #40444b;*/
+    border-bottom: 1px solid #42484e;
+    display: inline-flex;
+}
+
+.playContent .eachSongHhover {
+    background-color: #40444b;
+}
+
+.playContent .choosedSong {
+    background-color: #3b3f46;
+}
+
+.playContent .choosedSong .song-name {
+    color: #19b5f0;
+}
+
+.eachSong .serial-number {
+    width: 30px;
+    text-align: center;
+}
+
+.eachSong .song-name {
+    width: 280px;
+    color: #d3d3d3;
+    padding-left: 10px;
+}
+
+.eachSong .author-name {
+    width: 90px;
+}
+
+.eachSong .song-duration {
+    width: 60px;
+}
+
+.playContentNull {
+    display: none;
+    align-items: center;
+    justify-content: center;
+    height: 360px;
+    color: #FFFFFF;
+    font-size: 20px;
+}
+
+.cMusicControl {
+    background: pink;
+    width: 26px;
+    height: 16px;
+    position: absolute;
+    bottom: 80px;
+    right: 40px;
+    background: url("../images/shbar.png");
+    display: flex;
+    justify-content: center;
+}
+
+.cMusicControl .hideControl {
+    background-position: -141px -211px;
+    width: 16px;
+    height: 16px;
+}
+
+.cMusicControl .hideControl:hover {
+    background-position: -157px -211px;
+}
+
+.cMusicControl .showControl {
+    background-position: -215px -211px !important;
+}
+
+.cMusicControl .showControl:hover {
+    background-position: -231px -211px !important;
+}
+
+.showMusicControl {
+    bottom: -80px;
+}
+
+
+/*滚动条样式*/
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 8px;
+    /* background: #ccc; */
+}
+
+::-webkit-scrollbar-button {
+    /* background-color: #e5e5e5; */
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.6);
+}
